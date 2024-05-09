@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div>
       <div>
-        <h1 className="typewriter">Hello :) welcome to my page !!</h1>
+        <h1 className="typewriter">Hello and welcome !!</h1>
       </div>
 
       <div className={`fade-in-section ${showContent ? 'is-visible' : ''}`}>
