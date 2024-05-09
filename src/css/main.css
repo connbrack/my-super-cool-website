@@ -1,0 +1,69 @@
+
+.main {
+  font-family: "Anonymous", monospace;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin:auto;
+  padding:30px;
+  color: white;
+}
+
+.text{
+ white-space: pre-wrap !important;
+}
+
+.row-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+  justify-content: start;
+}
+
+.row-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  line-height: 2;
+}
+.icon {
+  height: 18px;
+  vertical-align: middle;
+  padding-right: 5px;
+}
+
+a {
+  box-shadow: inset 0 0 0 0 #C29EEC;
+  color: #92C88E;
+  padding: 0 .25rem;
+  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  line-height: 2;
+}
+a:hover {
+  box-shadow: inset 500px 0 0 0 #7CC6D4;
+  color: black;
+  animation: wiggle 2.5s infinite ;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+   25% { transform: rotate(-2deg); }
+   75% { transform: rotate(2deg); }
+  /*100% { transform: rotate(0deg); }*/
+}
+
+.icon-wiggle {
+  height: 18px;
+  vertical-align: middle;
+  padding-right: 5px;
+  display: inline-block;
+  animation: wiggle 2.5s infinite ;
+}
+
+.icon-wiggle:hover {
+  animation: none;
+}
