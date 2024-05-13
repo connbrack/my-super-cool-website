@@ -12,11 +12,11 @@ export default function HomeContent() {
       <div className="text">{Text.aboutMe}</div>
       <br />
       <div>
-        <a href="/portfolio">Check out my portfolio 🡢 </a>
+        <a href="/portfolio">Check out my portfolio 🡢</a>
       </div>
       <div>
         <a href="/connor-brackley-cv.pdf" target="_blank" rel="noreferrer">
-          Download my resume 🡢{" "}
+          Download my resume !!
         </a>
       </div>
 
