@@ -1,13 +1,10 @@
 import Text from "../components/Text";
-import MyInfo from "../components/MyInfo";
 import "../css/main.css";
 
 
 export default function HomeContent() {
   return (
     <div>
-      <MyInfo />
-
       <h2>About me !!</h2>
       <div className="text">{Text.aboutMe}</div>
       <br />

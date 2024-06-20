@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 import '../css/main.css';
 
 export default function Home() {
@@ -7,7 +7,7 @@ export default function Home() {
       <h1>Woah there !!</h1>
       <div>What the heck ! You're not supposed to be here 😠</div>
       <br />
-      <a href="/">Take me back home plz 🡢</a>
+       <li> <Link to="/">Take me back home plz</Link> </li>
     </div>
   );
 }

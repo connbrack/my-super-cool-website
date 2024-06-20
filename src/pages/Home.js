@@ -1,31 +1,36 @@
-import React, { useEffect, useState } from "react";
-import HomeContent from "../components/HomeContent";
+import Text from "../components/Text";
 import "../css/main.css";
-import "../css/startup.css";
+
 
 export default function Home() {
-  const [showContent, setShowContent] = useState(false);
-  useEffect(() => {
-    const typewriter = document.querySelector(".typewriter");
-    typewriter.addEventListener("animationend", () => {
-      setTimeout(() => {
-        setShowContent(true);
-      },);
-    });
-    return () => {
-      typewriter.removeEventListener("animationend", () => {
-        setShowContent(true);
-      });
-    };
-  }, []);
   return (
     <div>
+      <h2>About me !!</h2>
+      <div className="text">{Text.aboutMe}</div>
+      <br />
       <div>
-        <h1 className="typewriter">Hello :) and welcome !!</h1>
+        <a href="/portfolio">Check out my portfolio !!</a>
+      </div>
+      <div>
+        <a href="/connor-brackley-cv.pdf" target="_blank" rel="noreferrer">
+          Download my resume !!
+        </a>
       </div>
 
-      <div className={`fade-in-section ${showContent ? 'is-visible' : ''}`}>
-        <HomeContent />
+      <h2>My skills !!</h2>
+      <h2>My academic work !!</h2>
+      <div>
+        <div className="text">{Text.academicWork}</div>
+        <br />
+        <div>
+          <a
+            href="https://scholar.google.com/citations?user=uuAhl_QAAAAJ"
+            target="_blank"
+            rel="noreferrer"
+          >
+            See my publications !!
+          </a>
+        </div>
       </div>
     </div>
   );
