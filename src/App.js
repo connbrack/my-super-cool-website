@@ -8,27 +8,44 @@ import "./css/startup.css";
 
 function App() {
   const [showContent, setShowContent] = useState(false);
+  const [hasVisited, setHasVisited] = useState(false);
+
   useEffect(() => {
-    const typewriter = document.querySelector(".typewriter");
-    typewriter.addEventListener("animationend", () => {
-      setTimeout(() => {
+    const visited = sessionStorage.getItem("hasVisited");
+
+    if (visited) {
+      setHasVisited(true);
+      setShowContent(true);
+    } else {
+      const typewriter = document.querySelector(".typewriter");
+
+      const handleAnimationEnd = () => {
         setShowContent(true);
-      });
-    });
-    return () => {
-      typewriter.removeEventListener("animationend", () => {
-        setShowContent(true);
-      });
-    };
+        sessionStorage.setItem("hasVisited", "true");
+      };
+
+      typewriter.addEventListener("animationend", handleAnimationEnd);
+
+      return () => {
+        typewriter.removeEventListener("animationend", handleAnimationEnd);
+      };
+    }
   }, []);
+
   return (
     <html>
       <body className="main">
-        <div className="main-container">
+        <div className={`main-container`}>
           <div>
-            <h1 className="typewriter">Hello :) and welcome !!</h1>
+            <h1 className={`typewriter ${hasVisited ? "no-animation" : ""}`}>
+              Hello :) and welcome !!
+            </h1>
           </div>
-          <div className={`fade-in-section ${showContent ? "is-visible" : ""}`}>
+          <div
+            className={`fade-in-section ${showContent ? "is-visible" : ""} ${
+              hasVisited ? "no-animation" : ""
+            }`}
+          >
             <BrowserRouter>
               <MyInfo />
               <Routes>

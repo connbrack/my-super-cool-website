@@ -4,6 +4,10 @@
   width: 0;
   animation: typing 3s steps(20, end) forwards;
 }
+.typewriter.no-animation {
+  animation: none !important;
+  width: 100%;
+}
 
 @keyframes typing {
   0% {
@@ -32,4 +36,10 @@
   opacity: 1;
   transform: none;
   visibility: visible;
+}
+.fade-in-section.no-animation {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: none;
 }
