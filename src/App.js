@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyInfo from "./components/MyInfo";
+import Tabs from "./components/Tabs";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import "./css/main.css";
@@ -33,30 +34,31 @@ function App() {
   }, []);
 
   return (
-    <html>
-      <body className="main">
-        <div className={`main-container`}>
-          <div>
-            <h1 className={`typewriter ${hasVisited ? "no-animation" : ""}`}>
-              Hello :) and welcome !!
-            </h1>
+      <html>
+        <body className="main">
+          <div className={`main-container`}>
+            <div>
+              <h1 className={`typewriter ${hasVisited ? "no-animation" : ""}`}>
+                Hello :) and welcome !!
+              </h1>
+            </div>
+            <div
+              className={`fade-in-section ${showContent ? "is-visible" : ""} ${
+                hasVisited ? "no-animation" : ""
+              }`}
+            >
+              <BrowserRouter>
+                <MyInfo />
+                <Tabs />
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/*" element={<NotFound />} />
+                </Routes>
+              </BrowserRouter>
+            </div>
           </div>
-          <div
-            className={`fade-in-section ${showContent ? "is-visible" : ""} ${
-              hasVisited ? "no-animation" : ""
-            }`}
-          >
-            <BrowserRouter>
-              <MyInfo />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/*" element={<NotFound />} />
-              </Routes>
-            </BrowserRouter>
-          </div>
-        </div>
-      </body>
-    </html>
+        </body>
+      </html>
   );
 }
 
