@@ -18,6 +18,7 @@ export default function Home() {
       </div>
 
       <h2>My skills !!</h2>
+        <div className="text">{Text.mySkills}</div>
       <h2>My academic work !!</h2>
       <div>
         <div className="text">{Text.academicWork}</div>

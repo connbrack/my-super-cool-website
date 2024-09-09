@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyInfo from "./components/MyInfo";
 import Tabs from "./components/Tabs";
 import Home from "./pages/Home";
-import Experience from "./pages/Experience";
+import UnderConstruction from "./pages/UnderConstruction";
 import NotFound from "./pages/NotFound";
 import "./css/main.css";
 import "./css/startup.css";
@@ -53,7 +53,8 @@ function App() {
                 <Tabs />
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/experience" element={<Experience />} />
+                  <Route path="/experience" element={<UnderConstruction />} />
+                  <Route path="/portfolio" element={<UnderConstruction />} />
                   <Route path="/*" element={<NotFound />} />
                 </Routes>
               </BrowserRouter>
